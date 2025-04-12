@@ -12,7 +12,7 @@ sources:
       - name: account_manager_region_mapping
 
   - name: sales_database
-    schema: sales_database
+    schema: dataset_fil_rouge
     tables:
       - name: feedback
       - name: payment
