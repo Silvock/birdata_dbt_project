@@ -1,6 +1,7 @@
 /* Hello from my second branch
 Hello from my first branch
 */
+/* Good bye from my third branch */
 select
     order_id,
     user_name as user_id,
