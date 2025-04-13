@@ -1,7 +1,6 @@
 /* Hello from my second branch
 Hello from my first branch
 */
->>>>>>> origin/main
 select
     order_id,
     user_name as user_id,
