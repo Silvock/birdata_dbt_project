@@ -70,7 +70,7 @@ SELECT DATE_TRUNC(order_created_at, MONTH) AS reporting_date,
     total_monthly_users_from_jawa_timur
 FROM {{ ref('int_sales_database__order') }} AS orders
 LEFT JOIN {{ ref('stg_google_sheets__account_manager_region_mapping') }} as mapping ON orders.user_state = mapping.state
-left join total_monthly_user_from_jawa_timur as jt on jt.order_month = u.order_month
+left join total_monthly_user_from_jawa_timur as jt on jt.order_month = DATE_TRUNC(orders.order_created_at, MONTH)
 GROUP BY reporting_date,
     account_manager,
     state
