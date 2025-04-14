@@ -73,4 +73,5 @@ LEFT JOIN {{ ref('stg_google_sheets__account_manager_region_mapping') }} as mapp
 left join total_monthly_user_from_jawa_timur as jt on jt.order_month = DATE_TRUNC(orders.order_created_at, MONTH)
 GROUP BY reporting_date,
     account_manager,
-    state
+    state,
+    total_monthly_users_from_jawa_timur
