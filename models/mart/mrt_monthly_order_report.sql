@@ -53,7 +53,7 @@ order by order_month
 WITH
     total_monthly_user_from_jawa_timur as (
         select
-            date_trunc(order_date, month) as order_month,
+            date_trunc(order_created_at, month) as order_month,
             count(distinct orders.user_id) as total_monthly_users_from_jawa_timur
         from {{ ref('int_sales_database__order') }} orders
         LEFT JOIN {{ ref('stg_google_sheets__account_manager_region_mapping') }} as mapping ON orders.user_state = mapping.state
